@@ -1,0 +1,50 @@
+﻿@charset "utf-8";
+
+/**************************************************
+   Input
+**************************************************/
+.PUDD.PUDD-UI-inputField input[type="text"] {height:24px;}
+
+/**************************************************
+   Button
+**************************************************/
+.PUDD.PUDD-UI-Button input[type='button'] {height:24px; background:#fff; border:1px solid #d3d3d3; padding:0 10px; color:#4a4a4a; font-weight:normal;}
+.PUDD.PUDD-UI-Button input[type='button']:hover{border:1px solid #8c8c8c;}
+.PUDD.PUDD-UI-Button input[disabled]{background:#f2f2f2; border:1px solid #e0e0e0; color:#8d8d8d;}
+
+/**************************************************
+   Calendar
+**************************************************/
+.PUDD.PUDD-UI-datePicker input[type='text']{height:24px; text-indent:0px;}
+
+
+
+/**************************************************
+   selective-input
+**************************************************/
+.PUDD.PUDD-UI-selective-input .selectField .addresObjView.txt { background: #fff; border: 1px solid #999;font-size:12px;}
+
+
+/**************************************************
+   checkbox,radio
+**************************************************/
+
+.PUDD.PUDD-UI-ChkRadi input[type="checkbox"] + label {margin-left:0px !important;min-height:auto;height:auto;background:none; padding: 0px 0 0px 20px !important;text-indent:0px;}
+.PUDD.PUDD-UI-ChkRadi input[type="checkbox"].chkBack:checked + label{background:none;}
+.PUDD.PUDD-UI-ChkRadi input[type="checkbox"].chkBack:disabled + label{background:none;}
+
+.PUDD.PUDD-UI-ChkRadi input[type="radio"] + label {margin-left:0px !important;min-height:auto;height:auto;background:none;padding: 0px 0 0px 20px !important;text-indent:0px;}
+.PUDD.PUDD-UI-ChkRadi input[type="radio"]:checked + label{background: none;}
+.PUDD.PUDD-UI-ChkRadi input[type="radio"]:disabled + label{background: none;}
+
+
+
+/*팝업::패치관리사이트 그룹사업데이트 프로그레스바 */
+
+.PUDD.PUDD-UI-progress.PUDD-UI-linear.progress_style1 .progressBg{float:left;width:80%;}
+.PUDD.PUDD-UI-progress.PUDD-UI-linear.progress_style1 .percent{float:right;width:20%;}
+.PUDD.PUDD-UI-progress.PUDD-UI-linear.progress_style1 .percent span {font-size:12px;}
+
+
+/*메일 테이블 a태그 */
+.PUDD.PUDD-UI-GridTable .grid-content a.mail_from_to {color:#000;}

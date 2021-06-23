@@ -1,0 +1,44 @@
+package com.douzone.devblog.api.devloper.dao;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Repository;
+
+import com.douzone.devblog.common.dao.AbstractDAO;
+
+/**
+ * @version 1.0
+ */
+@Repository("ApiDeveloperDAO")
+public class ApiDeveloperDAO extends AbstractDAO {
+	
+	/**
+	 * 로그
+	 */
+	private static final Logger logger = LoggerFactory.getLogger(ApiDeveloperDAO.class);
+	
+
+	/**
+     * retrieveApiProfitList 영리 커뮤니티 게시판 리스트  
+     * @param param
+     * @return List<Map<String, Object>>
+     * @throws Exception
+     */
+    @SuppressWarnings("unchecked")
+    public List<Map<String, Object>> retrieveApiProfitList(Map<String, Object> param) throws Exception{
+    	List<Map<String, Object>> returnList = new ArrayList<Map<String, Object>>();
+    	
+    	if (logger.isDebugEnabled()) {
+    		logger.debug("invoked 'retrieveApiProfitList' method...");
+    	}
+    	
+    	returnList = (List<Map<String, Object>>)selectList("ApiDeveloperDAO.retrieveApiProfitList", param);
+    	
+    	return returnList;
+    }
+	
+}

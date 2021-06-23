@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns:security="http://www.springframework.org/schema/security"
+    xmlns:beans="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/security
+    http://www.springframework.org/schema/security/spring-security.xsd">
+       
+    <beans:bean id="bcryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />  
+    <beans:bean id="customAuthenticationProvider" class="com.douzone.devblog.common.utils.CustomAuthenticationProvider" />
+    <!-- <beans:bean id="loginService" class="com.douzone.devblog.main.login.service.LoginService" /> -->
+    
+    <security:http auto-config="true" use-expressions="true"> <!-- expression사용시 옵션 사용가능 -->
+    	<security:form-login 
+	   		login-page="/user/securityLogin.do" 
+    		login-processing-url="/user/login/actionLogin.do"
+    		username-parameter="loginId"
+    		password-parameter="loginPassword"
+    		default-target-url="/user/dashboard.do"	/>
+    	<security:logout logout-url="/logout.do" logout-success-url="/"/>
+    	
+    	<security:intercept-url pattern="/**/*.do" access="permitAll"/>
+    	<security:intercept-url pattern="/user/personal" access="hasRole('ROLE_USER')"/>
+    	<security:intercept-url pattern="/consult/*.do" access="hasRole('ROLE_ADMIN')"/>
+    	
+    	<security:csrf />
+    </security:http>
+    
+    <!--  -->
+    
+    <!-- <security:authentication-manager>
+    	<security:authentication-provider user-service-ref="loginService">
+    	</security:authentication-provider>
+    </security:authentication-manager> -->
+
+	
+</beans:beans>

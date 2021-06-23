@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<settings>
+		<setting name="mapUnderscoreToCamelCase" value="true" />
+	</settings>
+
+    <typeAliases>
+        <typeAlias alias="LoginVO" type="com.douzone.devblog.main.login.vo.LoginVO" />
+        <typeAlias alias="CompanyVO" type="com.douzone.devblog.company.vo.CompanyVO" />
+        
+        <typeAlias alias="NoticeVO" type="com.douzone.devblog.board.notice.vo.NoticeVO" />
+        <typeAlias alias="NoticeProductVO" type="com.douzone.devblog.board.notice.vo.NoticeProductVO" />
+        <typeAlias alias="NoticeAlarmVO" type="com.douzone.devblog.board.notice.vo.NoticeAlarmVO" />
+        <typeAlias alias="NoticeAttachFileVO" type="com.douzone.devblog.board.notice.vo.NoticeAttachFileVO" />
+                
+        <typeAlias alias="AttachFileVO" type="com.douzone.devblog.common.vo.AttachFileVO" />
+    </typeAliases>
+</configuration>

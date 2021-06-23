@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="CommunityDAO">
+    
+   
+    <select id="CommunityDAO.retrieveCommunityDataList" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+    	/* CommunityDAO.retrieveCommunityDataList - 커뮤니티 게시판 조회 */
+    	
+		SELECT
+		<choose>
+			<when test='is_count != null and is_count == "Y"'>
+				COUNT(*) AS "totalCnt"
+			</when>
+			<otherwise>
+				seq
+				, type
+				, subject
+				, content
+				, view_cnt 			AS "viewCnt"
+				, create_seq 		AS "createSeq"
+				, IFNULL( DATE_FORMAT( create_date, '%Y-%m-%d %H:%i:%s'), '')	AS "createDate"
+				, modify_seq 		AS "modifySeq"
+				, modify_date 		AS "modifyDate"
+			</otherwise>
+		</choose>
+		FROM neosdev.t_board_community
+		<if test='is_count == null or is_count != "Y"'>
+			ORDER BY seq DESC
+			LIMIT ${start}, ${length}
+		</if>
+		
+	</select>
+	
+	
+	<insert id="CommunityDAO.insertCommunityData" parameterType="java.util.HashMap">	
+		INSERT INTO neosdev.t_board_community (
+			type
+			, subject
+			, content
+			, create_seq
+			, create_date
+		) VALUES (
+			#{type}
+			, #{subject}
+			, #{content}
+			, 1
+			, NOW()
+		)
+	</insert>
+	
+	<update id="CommunityDAO.updateViewCnt" parameterType="java.util.HashMap">
+		UPDATE neosdev.t_board_community
+		SET	view_cnt = view_cnt + 1
+		WHERE seq = #{seq}
+	</update>
+   
+</mapper>    

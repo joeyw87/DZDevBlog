@@ -1,0 +1,174 @@
+@charset "utf-8";
+
+/*
+	Editor Style
+*/
+
+
+html {
+	width:auto;
+	height:auto;
+}
+
+body, td {
+	/* 호출페이지에서 기본폰트가 설정되어 있지 않은 경우 선언 */
+	/* 호출페이지에서 선언되어 있는 경우는 주석처리 할 것 */
+	font-family: '돋움', Dotum, '굴림', Gulim, sans-serif;
+	font-size: 9pt;
+}
+
+body {
+	margin: 3px;
+	width:auto;
+	height:auto;
+	word-wrap: break-word;
+	word-break: normal; /* UBA-14575 */
+}
+
+table, td {
+	word-break: break-all; /* UBA-14575 */
+}
+
+p, blockquote {
+	margin-top:0px;
+	margin-bottom:0px;
+}
+
+.dze_tb_layout {
+	border-collapse:collapse;
+}
+.dze_tb_layout_td {
+	border:1px dotted #c5c5c5 !important;
+}
+.dze_tb_layout_dummy {
+	
+}
+.dze_tb_layout_td_dummy {
+	
+}
+
+/* 내용이 있는 북마크 표식 */
+.dze_bookmark_flag {
+    margin-left: 2px;
+    margin-right: 2px;
+    padding: 0 0 0 8px;
+    background: url('../image/toolbar/ico_bookmark.png') no-repeat 0 0;
+}
+.dze_bookmark_flag_dummy {
+}
+
+
+input[type=radio] {
+	position:relative; 
+	visibility:visible;
+}
+
+input[type=radio] + label {
+	background: none;
+}
+
+input[type=radio]:checked + label {
+	background: none;
+}
+
+input[type=radio]:disabled + label {
+	background: none;
+}
+
+input[type=checkbox] {
+	position:relative; 
+	visibility:visible;
+}
+.dze_printpagebreak {
+	page-break-after:always;
+}
+.dze_printpagebreak_guide {
+	width: 100%;
+	margin: 10px 0 10px 0;
+	height: 0;
+	border-width: 3px 0 0 0;
+	border-style: dashed;
+	border-color: #d9d9d9;
+}
+.dze_printpagebreak_guide_dummy {
+}
+
+.dze_external_data_area {
+	background: #FFFFAF;
+	border: none;
+	border-bottom:1px solid gray; 
+	color: black;
+	text-align: center;
+	display: inline;
+}
+
+/*
+.tabSpan {
+	white-space: pre;
+}
+*/
+
+/* ---------------------------------------- */
+/* 기존 비즈박스에서 사용하던 에디터 스타일 */
+/* ---------------------------------------- */
+
+/* 보여주는 영역 #tdEditor 에 사용되는 스타일을 에디터에도 동일하게 적용 */
+
+/*#tdEditor*/ em{font-style: italic;}
+/*#tdEditor*/ h1{display: block;font-size: 2em;margin-top: 0.67em;margin-bottom: 0.67em;margin-left: 0;margin-right: 0;font-weight: bold;}
+/*#tdEditor*/ h2{display: block;font-size: 1.5em;margin-top: 0.83em;margin-bottom: 0.83em;margin-left: 0;margin-right: 0;font-weight: bold;}
+/*#tdEditor*/ h3{display: block;font-size: 1.17em;margin-top: 1em;margin-bottom: 1em;margin-left: 0;margin-right: 0;font-weight: bold;}
+/*#tdEditor*/ h4{display: block;margin-top: 1.33em;margin-bottom: 1.33em;margin-left: 0;margin-right: 0;font-weight: bold;}
+/*#tdEditor*/ h5{display: block;font-size: .83em;margin-top: 1.67em;margin-bottom: 1.67em;margin-left: 0;margin-right: 0;font-weight: bold;}
+/*#tdEditor*/ h6{display: block;font-size: .67em;margin-top: 2.33em;margin-bottom: 2.33em;margin-left: 0;margin-right: 0;font-weight: bold;}
+/* 원래 주석임 #tdEditor p{display: block;margin-top: 1em;margin-bottom: 1em;margin-left: 0;margin-right: 0;}*/
+/*#tdEditor*/ strong{font-weight: bold;}
+/*#tdEditor*/ sub{vertical-align: sub;font-size: smaller;}
+/*#tdEditor*/ sup{vertical-align: super;font-size: smaller;}
+/*#tdEditor*/ var{font-style: italic;}
+/*#tdEditor*/ b{font-weight: bold;}
+/*#tdEditor*/ u{text-decoration: underline;}
+/*#tdEditor*/ i{font-style: italic;}
+/*#tdEditor*/ div{display: block;}
+/*#tdEditor*/ blockquote{display: block;margin-top: 1em;margin-bottom: 1em;margin-left: 40px;margin-right: 40px;}
+/*#tdEditor*/ pre{display: block;font-family: monospace;white-space: pre;margin: 1em 0;}
+/*#tdEditor*/ a{text-decoration:underline;}
+/*#tdEditor*/ address{display: block;font-style: italic;}
+/*#tdEditor*/ big{font-size: larger;}
+/*#tdEditor*/ cite{font-style: italic;}
+/*#tdEditor*/ code{font-family: monospace;}
+/*#tdEditor*/ del{text-decoration: line-through;}
+/*#tdEditor*/ dfn{font-style: italic;}
+/*#tdEditor*/ img{display: inline-block;}
+/*#tdEditor*/ q {display: inline;}
+/*#tdEditor*/ q:before {content: open-quote;}
+/*#tdEditor*/ q:after {content: close-quote;}
+/*#tdEditor*/ s{text-decoration: line-through;}
+/*#tdEditor*/ samp{font-family: monospace;}
+/*#tdEditor*/ small{font-size: smaller;}
+/*#tdEditor*/ ins{text-decoration: underline;}
+/*#tdEditor*/ strike{text-decoration: line-through;}
+/*#tdEditor*/ fieldset{display: block;margin-left: 2px;margin-right: 2px;padding-top: 0.35em;padding-bottom: 0.625em;padding-left: 0.75em;padding-right: 0.75em;border: 2px groove;}
+/*#tdEditor*/ form{display: block;margin-top: 0em;}
+/*#tdEditor*/ legend{display: block;padding-left: 2px;padding-right: 2px;border: none;}
+/*#tdEditor*/ caption{display: table-caption;text-align: center;}
+/*#tdEditor*/ textarea{background-color: white;border: 1px solid;border-image-source: initial;border-image-slice: initial;border-image-width: initial;border-image-outset: initial;border-image-repeat: initial;flex-direction: column;resize: auto;cursor: auto;padding: 2px;white-space: pre-wrap;word-wrap: break-word;}
+/*#tdEditor*/ input{margin: 0em;color: initial;letter-spacing: normal;word-spacing: normal;text-transform: none;text-indent: 0px;text-shadow: none;display: inline-block;text-align: start;}
+/*#tdEditor*/ ol{display: block;list-style-type: decimal;margin-top: 1em;margin-bottom: 1em;margin-left: 0;margin-right: 0;padding-left: 40px;}
+/*#tdEditor*/ ul{display: block;list-style-type: disc;margin-top: 1em;margin-bottom: 1em;margin-left: 0;margin-right: 0;padding-left: 40px;}
+/*#tdEditor*/ li{display: list-item;list-style: inherit;text-decoration:inherit;}
+/*#tdEditor*/ dl{display: block;margin-top: 1em;margin-bottom: 1em;margin-left: 0;margin-right: 0;}
+/*#tdEditor*/ dt{display: block;}
+/*#tdEditor*/ dd{display: block;margin-left: 40px;}
+/*#tdEditor*/ hr{display: block;margin-top: 0.5em;margin-bottom: 0.5em;margin-left: auto;margin-right: auto;border-style: inset;border-width: 1px;}
+/*#tdEditor*/ ul.dzeExtListStyleTriangle {list-style-type:none;margin-top: 1em;margin-bottom: 1em;margin-left: 0;margin-right: 0;padding-left: 40px;}
+/*#tdEditor*/ ul.dzeExtListStyleTriangle li.dzeExtListStyleTriangleLi:before{content: '\25B6';margin-left:-20px; padding-right: 5px;}
+/*#tdEditor*/ ul.dzeExtListStyleInnerCircle {list-style-type:none;margin-top: 1em;margin-bottom: 1em;margin-left: 0;margin-right: 0;padding-left: 40px;}
+/*#tdEditor*/ ul.dzeExtListStyleInnerCircle li.dzeExtListStyleInnerCircleLi:before{content: '\25CE';margin-left:-20px; padding-right: 5px;}
+/*#tdEditor*/ ul.dzeExtListStyleFillCircle {list-style-type:none;margin-top: 1em;margin-bottom: 1em;margin-left: 0;margin-right: 0;padding-left: 40px;}
+/*#tdEditor*/ ul.dzeExtListStyleFillCircle li.dzeExtListStyleFillCircleLi:before{content: '\25CF';margin-left:-20px; padding-right: 5px;}
+/*#tdEditor*/ ul.dzeExtListStyleDiamond {list-style-type:none;margin-top: 1em;margin-bottom: 1em;margin-left: 0;margin-right: 0;padding-left: 40px;}
+/*#tdEditor*/ ul.dzeExtListStyleDiamond li.dzeExtListStyleDiamondLi:before{content: '\25C6';margin-left:-20px; padding-right: 5px;}
+/*#tdEditor*/ ul.dzeExtListStyleHypon {list-style-type:none;margin-top: 1em;margin-bottom: 1em;margin-left: 0;margin-right: 0;padding-left: 40px;}
+/*#tdEditor*/ ul.dzeExtListStyleHypon li.dzeExtListStyleHyponLi:before {content: '\2574';margin-left:-20px; padding-right: 5px;}
+/***************************/

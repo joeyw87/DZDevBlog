@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+					"-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+					"http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+
+	
+  	<definition name="main_layout" template="/WEB-INF/views/layout/layout.jsp">
+  		<put-attribute name="left" value="/WEB-INF/views/layout/left.jsp"/>
+  		<put-attribute name="header" value="/WEB-INF/views/layout/header.jsp"/>
+  		<put-attribute name="footer" value="/WEB-INF/views/layout/footer.jsp"/>
+	</definition>
+	
+	<definition name="sub_layout" template="/WEB-INF/views/layout/sub/sub_layout.jsp">
+  		<put-attribute name="left" value="/WEB-INF/views/layout/left.jsp"/>
+  		<put-attribute name="header" value="/WEB-INF/views/layout/sub/header.jsp"/>
+  		<put-attribute name="footer" value="/WEB-INF/views/layout/footer.jsp"/>
+	</definition>
+	
+	<definition name="board_layout" template="/WEB-INF/views/layout/board/board_layout.jsp">
+  		<put-attribute name="left" value="/WEB-INF/views/layout/left.jsp"/>
+  		<put-attribute name="header" value="/WEB-INF/views/layout/board/header.jsp"/>
+  		<put-attribute name="footer" value="/WEB-INF/views/layout/footer.jsp"/>
+	</definition>
+	
+	
+	<!-- 메인 페이지 -->
+	<definition name="/main/mainView" extends="main_layout">
+		<put-attribute name="body" value="/WEB-INF/views/main/mainView.jsp"></put-attribute>
+	</definition> 
+	
+	<!-- API 페이지 -->
+	<definition name="/api/*/*" extends="sub_layout">
+		<put-attribute name="body" value="/WEB-INF/views/api/{1}/{2}.jsp"></put-attribute>
+	</definition> 
+	
+	<!-- 게시판 페이지 -->
+	<definition name="/board/*/*" extends="board_layout">
+		<put-attribute name="body" value="/WEB-INF/views/board/{1}/{2}.jsp"></put-attribute>
+	</definition> 	
+	
+	
+    <!-- 
+    <definition name="base" template="/WEB-INF/views/layout/template.jsp">
+        <put-attribute name="header" value="/WEB-INF/views/layout/header.jsp" />
+        <put-attribute name="left"   value="/WEB-INF/views/layout/left.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/views/layout/footer.jsp" />
+    </definition>
+
+    <definition name="_none_left_base" template="/WEB-INF/views/layout/template_noneLogin.jsp">
+        <put-attribute name="header" value="/WEB-INF/views/layout/header.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/views/layout/footer.jsp" />
+    </definition>
+    
+    <definition name="bs_base" template="/WEB-INF/views/layout/template_none.jsp">
+    </definition>
+    
+    
+	<definition name="bsindex" extends="bs_base">
+		<put-attribute name="body" value="/WEB-INF/views/bsindex.jsp"></put-attribute>
+	</definition>
+	
+  
+	<definition name="*" extends="_none_left_base">
+		<put-attribute name="body" value="/WEB-INF/views/{1}.jsp"></put-attribute>
+	</definition>
+	
+	
+    <definition name="user/login/*" extends="_none_left_base">
+		<put-attribute name="body" value="/WEB-INF/views/user/login/{1}.jsp"></put-attribute>
+	</definition>
+	
+	
+    <definition name="user/join/*" extends="_none_left_base">
+		<put-attribute name="body" value="/WEB-INF/views/user/join/{1}.jsp"></put-attribute>
+	</definition>
+	
+	
+    <definition name="user/*" extends="base">
+		<put-attribute name="body" value="/WEB-INF/views/user/{1}.jsp"></put-attribute>
+	</definition>
+	
+    <definition name="office/*" extends="base">
+		<put-attribute name="body" value="/WEB-INF/views/office/{1}.jsp"></put-attribute>
+	</definition>
+
+    
+    <definition name="board/*/*" extends="base">
+		<put-attribute name="body" value="/WEB-INF/views/board/{1}/{2}.jsp"></put-attribute>
+		<put-attribute name="left" value="/WEB-INF/views/board/boardLeft.jsp"></put-attribute>
+	</definition>	
+	
+    <definition name="consult/*" extends="base">
+		<put-attribute name="body" value="/WEB-INF/views/consult/{1}.jsp" />
+		<put-attribute name="left"   value="/WEB-INF/views/consult/consultLeft.jsp" />
+	</definition>	
+	
+    <definition name="consult/cs/*" extends="base">
+		<put-attribute name="body" value="/WEB-INF/views/consult/cs/{1}.jsp" />
+		<put-attribute name="left"   value="/WEB-INF/views/consult/cs/consultLeft.jsp" />
+	</definition>	 
+	
+    <definition name="consult/cs/*" extends="base">
+		<put-attribute name="body" value="/WEB-INF/views/consult/cs/{1}.jsp" />
+		<put-attribute name="left"   value="/WEB-INF/views/consult/cs/consultLeft.jsp" />
+	</definition>	
+
+    <definition name="csadmin/role/*" extends="base">
+		<put-attribute name="body" value="/WEB-INF/views/csadmin/role/{1}.jsp" />
+		<put-attribute name="left"   value="/WEB-INF/views/csadmin/csadminLeft.jsp" />
+	</definition>	
+	
+    <definition name="user/personal/*" extends="base">
+		<put-attribute name="body" value="/WEB-INF/views/user/personal/{1}.jsp" />
+		<put-attribute name="left"   value="/WEB-INF/views/user/personal/personalLeft.jsp" />
+	</definition>
+	 
+    <definition name="user/personal/popup/*" template="/WEB-INF/views/layout/template_pop2.jsp">
+		<put-attribute name="body" value="/WEB-INF/views/user/personal/popup/{1}.jsp" />
+	</definition>	
+	-->
+	
+</tiles-definitions>
